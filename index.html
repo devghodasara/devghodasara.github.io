@@ -3,6 +3,8 @@
 <head>
   <title>Website Coming Soon!</title>
   <style>
+    /* CSS styling */
+
     /* Center the content vertically and horizontally */
     html, body {
       height: 100%;
@@ -43,6 +45,20 @@
       color: #ffffff;
     }
     
+    /* Style the thought */
+    .thought {
+      font-family: 'Arial', sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    
+    /* Style the author */
+    .author {
+      font-family: 'Arial', sans-serif;
+      font-size: 14px;
+      color: #999999;
+    }
+    
     /* Animation keyframes */
     @keyframes typing {
       0% {
@@ -57,7 +73,7 @@
         color: #ffffff;
       }
     }
-    
+
     @keyframes fade-in {
       0% {
         opacity: 0;
@@ -72,29 +88,78 @@
   <h1>Coming Soon!</h1>
   <h2>Dev Ghodasara's Personal Webpage</h2>
   <div class="message">
-    Thank you for your patience. My website is under construction.
+    <!-- The animated message will be displayed here -->
+    Website under construction
   </div>
 
   <script>
     // Typing animation for the message
     const messageElement = document.querySelector('.message');
-    const messageText = 'Thank you for your patience! My website is under construction.';
+    const animatedMessage = "Thank you for your patience! My website is under construction.";
     let index = 0;
+    let thoughts = [];
+    let currentThoughtIndex = 0;
 
     function animateText() {
-      messageElement.textContent = messageText.slice(0, index);
+      messageElement.textContent = animatedMessage.slice(0, index);
       index++;
-      if (index <= messageText.length) {
-        setTimeout(animateText, 100);
+      if (index <= animatedMessage.length) {
+        setTimeout(animateText, 50);
       } else {
         messageElement.style.borderRight = 'none';
+        setTimeout(changeThought, 10000);
       }
     }
 
     setTimeout(() => {
-      document.querySelector('.message').style.opacity = '1';
+      messageElement.style.opacity = '1';
       animateText();
     }, 2000);
+
+    // Fetch a new set of thoughts from the API
+    function fetchThoughts() {
+      fetch('https://type.fit/api/quotes')
+        .then(response => response.json())
+        .then(data => {
+          thoughts = data.map(quote => {
+            const author = quote.author || 'Unknown';
+            return { text: quote.text, author: author };
+          });
+          changeThought();
+        })
+        .catch(error => {
+          console.log('Error:', error);
+        });
+    }
+
+    // Change the displayed thought
+    function changeThought() {
+      const thoughtElement = document.createElement('p');
+      thoughtElement.className = 'thought';
+      thoughtElement.textContent = thoughts[currentThoughtIndex].text;
+
+      const authorElement = document.createElement('p');
+      authorElement.className = 'author';
+      authorElement.textContent = `- ${thoughts[currentThoughtIndex].author}`;
+
+      const quoteHeaderElement = document.createElement('p');
+      quoteHeaderElement.textContent = 'Here are some inspirational thoughts:';
+      quoteHeaderElement.className = 'quote-header';
+      messageElement.innerHTML = ''; // Clear the message content
+      messageElement.appendChild(quoteHeaderElement); // Add the quote header
+      messageElement.appendChild(thoughtElement); // Add the thought
+      messageElement.appendChild(authorElement); // Add the author's name
+
+      thoughtElement.style.animation = 'simple-animation 1s ease-in-out';
+      thoughtElement.style.opacity = '1';
+
+      currentThoughtIndex = (currentThoughtIndex + 1) % thoughts.length;
+      setTimeout(changeThought, 10000);
+    }
+
+    // Fetch initial thoughts
+    fetchThoughts();
   </script>
 </body>
 </html>
+
