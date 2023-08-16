@@ -83,6 +83,22 @@
       }
     }
   </style>
+  <style>
+    /* Matrix-themed background */
+    body {
+      background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='2' height='2'><rect width='1' height='1' fill='green'/><rect x='1' y='1' width='1' height='1' fill='black'/></svg>");
+      animation: matrixAnimation 5s linear infinite;
+    }
+
+    @keyframes matrixAnimation {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: 20px 20px; /* Adjust as needed */
+      }
+    }
+  </style>
 </head>
 <body>
   <h1>Coming Soon!</h1>
@@ -162,4 +178,3 @@
   </script>
 </body>
 </html>
-
