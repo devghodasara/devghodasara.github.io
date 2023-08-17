@@ -13,7 +13,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background-color: #000000;
+      background-color: #1e1e1e;
       color: #ffffff;
       font-family: monospace;
     }
@@ -58,6 +58,25 @@
       font-size: 14px;
       color: #999999;
     }
+
+    .contact {
+      position: absolute;
+      right: 25px;
+      bottom: 25px;
+      text-align: right;
+      font-size: 18px;
+    }
+
+    .contact a{;
+        display: inline-block;
+        color: #ffffff;
+        text-decoration: none;
+    }
+        
+    .contact a:hover{
+        color: #00ff00;
+        transform: scale(1.1);
+    }    
     
     /* Animation keyframes */
     @keyframes typing {
@@ -80,22 +99,6 @@
       }
       100% {
         opacity: 1;
-      }
-    }
-  </style>
-  <style>
-    /* Matrix-themed background */
-    body {
-      background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='2' height='2'><rect width='1' height='1' fill='green'/><rect x='1' y='1' width='1' height='1' fill='black'/></svg>");
-      animation: matrixAnimation 5s linear infinite;
-    }
-
-    @keyframes matrixAnimation {
-      0% {
-        background-position: 0 0;
-      }
-      100% {
-        background-position: 20px 20px; /* Adjust as needed */
       }
     }
   </style>
@@ -176,5 +179,9 @@
     // Fetch initial thoughts
     fetchThoughts();
   </script>
+  <div class="contact">
+      <a href="contact.html">Contact Me</a>
+  </div>
 </body>
 </html>
+
