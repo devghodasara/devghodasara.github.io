@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Dev Ghodasara's Resume</title>
+</head>
+<body>
+    <header>
+        <a href="index.html" id="website-name">
+            <h1><span style="font-weight: 200">DEV </span><span style="font-weight: 500">GHODASARA</span></h1>
+        </a>
+        <button class="toggle-menu" onclick="displayMenu()" aria-label="Menu">&#9776;</button>
+        <nav class="sections">
+            <ul>
+                <li><a href="index.html">About me</a></li>
+                <li><a href="connect.html">Connect</a></li>
+                <li><a href="resume.html">Resume</a><li>
+            </ul>
+        </nav>
+        <div class="theme-toggle">
+            <input type="checkbox" id="themeSwitch" aria-lable="Toggle Theme">
+            <label for="themeSwitch" class="toggle-label">
+                <span class="toggle-handle"></span>
+            </label>
+        </div>
+    </header>
+    <div class="pdf-container">
+        <embed src="Dev Ghodasara Resume.pdf" type="application/pdf" width="100%" height="100%"/>
+        <a class="download-resume-button" href="Dev Ghodasara Resume.pdf" download target="_blank">
+            <img src="Images/download-icon.png" alt="Download Resume">
+        </a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
