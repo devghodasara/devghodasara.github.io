@@ -76,6 +76,7 @@ header {
 }
 
 .animate-dev {
+    display: inline-block;
     animation: fade-in 2s infinite;
 }
 
@@ -86,7 +87,7 @@ header {
 .alternate .original-text {
     color: red;
     text-transform: lowercase;
-    letter-spacing: 0.1170em;
+    letter-spacing: 0.1169em;
 }
 
 .alternate .alternate-text {
@@ -100,22 +101,23 @@ header {
     }
     80% {
         opacity: 1;
-        text-shadow: 0 0 0;   
+        text-shadow: 0 0 0;
+        transform: matrix(1, 0, 0, 1, 0, 0);   
     }
     85% {
         opacity: 0.25;
         text-shadow: 4px 4px 1px rgba(0, 247, 255, 0.5);
-        transform: matrix(1, 0, 0, 1, 0, 0);
+        transform: matrix(1, 0, -1.5, 1, 0, 0);
     }
     90% {
         opacity: 0.5;
         text-shadow: 2px -2px 1px rgba(0, 255, 26, 0.5);
-        transform: matrix(1, 0, 0.5, 1, 0, 0);
+        transform: matrix(1, 0, 1.5, 1, 0, 0);
     }
     95% {
         opacity: 0.75;
         text-shadow: -4px -4px 1px rgba(255, 255, 0, 0.5);
-        transform: matrix(1, 0, -0.5, 1, 0, 0);
+        transform: matrix(1, 0, -1.5, 1, 0, 0);
     }
     100% {
         opacity: 0;
@@ -251,4 +253,10 @@ header {
 
 .download-resume-button:hover {
     background-color: #D3D3D3;
+}
+
+#contact-form {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
