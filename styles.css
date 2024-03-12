@@ -75,6 +75,70 @@ header {
     color: inherit;
 }
 
+.animate-dev {
+    animation: fade-in 2s infinite;
+}
+
+.alternate-text{
+    visibility: hidden;
+}
+
+.alternate .original-text {
+    color: red;
+    text-transform: lowercase;
+    letter-spacing: 0.1170em;
+}
+
+.alternate .alternate-text {
+    visibility: visible;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 1;
+        text-shadow: 0 0 0;
+    }
+    80% {
+        opacity: 1;
+        text-shadow: 0 0 0;   
+    }
+    85% {
+        opacity: 0.25;
+        text-shadow: 4px 4px 1px rgba(0, 247, 255, 0.5);
+        transform: matrix(1, 0, 0, 1, 0, 0);
+    }
+    90% {
+        opacity: 0.5;
+        text-shadow: 2px -2px 1px rgba(0, 255, 26, 0.5);
+        transform: matrix(1, 0, 0.5, 1, 0, 0);
+    }
+    95% {
+        opacity: 0.75;
+        text-shadow: -4px -4px 1px rgba(255, 255, 0, 0.5);
+        transform: matrix(1, 0, -0.5, 1, 0, 0);
+    }
+    100% {
+        opacity: 0;
+        text-shadow: 0 0 0;
+    }  
+}
+
+
+#my-intro {
+    animation: fade-in-left 1.5s;
+}
+
+@keyframes fade-in-left {
+    from{
+            opacity: 0; 
+            transform: translateX(-50px);
+    }
+    to{
+            opacity: 1;
+            transform: translateX(0px);
+    }
+}
+
 .sections ul {
     list-style-type: none;
     margin: 0;

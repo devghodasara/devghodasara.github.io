@@ -1,5 +1,6 @@
 const modeSwitch = document.getElementById('themeSwitch');
 const header = document.getElementsByTagName("header")[0];
+var animateDev = document.querySelectorAll('.alternate-text');
 const body = document.body;
 
 modeSwitch.addEventListener('change', () => {
@@ -58,6 +59,10 @@ function displayMenu() {
         themeSwitch.classList.remove('show');
         toggleMenu.textContent = '☰'
     }
-
-    
 }
+
+function flickerText(){
+    body.classList.toggle('alternate')
+}
+
+setInterval(flickerText,2000);
