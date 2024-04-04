@@ -19,7 +19,7 @@
         <button class="toggle-menu" onclick="displayMenu()" aria-label="Menu">&#9776;</button>
         <nav class="sections">
             <ul>
-                <li><a href="index.html">About me</a></li>
+                <li><a href="https://www.ghodasara.dev">About me</a></li>
                 <li><a href="connect.html">Connect</a></li>
                 <li><a href="resume.html">Resume</a><li>
             </ul>
@@ -31,7 +31,38 @@
             </label>
         </div>
     </header>
-    <iframe id="contact-form" src="https://docs.google.com/forms/d/e/1FAIpQLSfeaoVTizYxUiRfaRyOZS9--6SCzv3JQr6nJJDUxMDpUgcozw/viewform?embedded=true" frameborder="0">Loading form…</iframe>
+    <div class="connect-container">
+        <p>Connect with me on LinkedIn or GitHub:</p>
+        <div class="social-media-buttons">
+            <a href="https://www.linkedin.com/in/devghodasara" target="_blank">
+                <img src="Images/linkedin-logo.png" alt="LinkedIn" width="50px" height="45px">
+            </a>
+            <a href="https://github.com/devghodasara" target="_blank">
+                <img src="Images/github-logo.png" alt="GitHub"  width="50px" height="50px">
+            </a>
+        </div>
+        <p> OR <br/> <br/> reach out via the form below: </p>
+        <div class="form-container">
+        <form id="contact-form" onsubmit="submitToGoogleForm(event, this)"> 
+            <h4>CONTACT DEV</h4>
+            <div>
+                <input type="text" placeholder="First Name" name="first_name" autocomplete="given-name" required>
+                <input type="text" placeholder="Last Name" name="last_name" autocomplete="family-name" required>
+            </div><br>
+            <input type="tel" placeholder="Phone number" name="phone_number" autocomplete="mobile" pattern="[0-9]{10}" optional><br>
+            <input type="email"  placeholder="Email address" name="email" autocomplete="email" required><br>
+            <input type="text" placeholder="Subject" name="subject"  width="100%" required><br>
+            <textarea rows="3" placeholder="Enter your message" name="message" oninput="autoResize(this)" required></textarea><br>
+            <div>
+                <button class="form-buttons" type="button" id="clear-button" onclick="clearForm()">Clear</button>
+                <button class="form-buttons" type="submit" id="submit-button">Submit</button>
+            </div>
+            <br/>
+            <div id="form-status"></div>
+            <br/>
+        </form>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

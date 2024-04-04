@@ -255,8 +255,89 @@ header {
     background-color: #D3D3D3;
 }
 
+.connect-container {
+    padding: 25px 5vw 25px 5vw;
+    text-align: center;
+}
+
+.social-media-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #contact-form {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 1rem;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.dark-mode #contact-form {
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 1rem;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact-form input, #contact-form textarea {
+    font-family: inherit;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid;
+    color: #0C4160;
+}
+
+.dark-mode #contact-form input,.dark-mode #contact-form textarea {
+    font-family: inherit;
+    text-align: center;
+    border-radius: 5px;
+    color: #C3CEDA;
+    background-color: #0C4160;
+    border: 1px solid #738FA7;
+}
+
+.form-buttons {
+    font-family: inherit;
+    border: 1px solid #0C4160;
+    border-radius: 5px;
+    background-color: #738FA7;
+    color: white;
+}
+
+.dark-mode .form-buttons {
+    font-family: inherit;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color:#738FA7;
+    color: #071330;
+}
+
+.form-container input[type="text"][name="subject"] {
+    width: 80%;
+}
+
+.form-container textarea[name="message"] {
+    width: 80%;
+    height: auto;
+    resize: none; /* Disable user resizing */
+    overflow: hidden; /* Hide vertical scrollbar */
+}
+
+#form-status {
+    font-size: .75em;
 }
