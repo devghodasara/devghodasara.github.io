@@ -2,6 +2,7 @@ const modeSwitch = document.getElementById('themeSwitch');
 const header = document.getElementsByTagName("header")[0];
 var animateDev = document.querySelectorAll('.alternate-text');
 const body = document.body;
+const projectContainers = document.querySelectorAll('.project-container');
 
 modeSwitch.addEventListener('change', () => {
     localStorage.setItem('themePreference',modeSwitch.checked ? 'dark' : 'light');
@@ -123,3 +124,50 @@ function submitToGoogleForm(event,form) {
         }, 2000);
     });
 }
+
+function handleScroll() {
+    const projectsContainer = document.querySelector('#projects');
+    const projectNameElements = document.querySelectorAll('.project-name');
+    const projectDescriptionElements = document.querySelectorAll('.project-description');
+    const techStackContainerElements = document.querySelectorAll('.tech-stack-container');
+    const parentRect = projectsContainer.getBoundingClientRect();
+
+    projectNameElements.forEach(projectNameElement => {
+        const elementRect = projectNameElement.getBoundingClientRect();
+
+        if (elementRect.top >= parentRect.top && elementRect.bottom <= parentRect.bottom) {
+            setTimeout(function() {
+                projectNameElement.style.opacity = '1';
+                projectNameElement.style.animation = 'fade-in-up 1.5s';
+            }, 500);
+        }
+    });
+
+    techStackContainerElements.forEach(techStackContainerElement => {
+        const elementRect = techStackContainerElement.getBoundingClientRect();
+        const innerElements = techStackContainerElement.children;
+
+        if (elementRect.top >= parentRect.top && elementRect.bottom <= parentRect.bottom) {
+            for (let i = 0; i < innerElements.length; i++) {
+                setTimeout(function() {
+                    innerElements[i].style.opacity = '1';
+                    innerElements[i].style.animation = 'fade-in-smooth 1s';
+                }, 750 + (i * 75));
+            }
+        }
+    });
+
+    projectDescriptionElements.forEach(projectDescriptionElement => {
+        const elementRect = projectDescriptionElement.getBoundingClientRect();
+
+        if (elementRect.top >= parentRect.top && elementRect.bottom <= parentRect.bottom) {
+            setTimeout(function() {
+                projectDescriptionElement.style.opacity = '1';
+                projectDescriptionElement.style.animation = 'fade-in-up 1.5s';
+            }, 1000);
+        }
+    });
+}
+  
+  document.addEventListener('DOMContentLoaded', handleScroll);
+  document.getElementById('projects').addEventListener('scroll', handleScroll);

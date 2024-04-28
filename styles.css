@@ -7,7 +7,10 @@ body {
     font-family: Montserrat;
     margin: 0;
     padding: 0;
-
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-height: 100vh;
 }
 /*#0C4160, #C3CEDA, #071330, #738FA7*/
 body.dark-mode {
@@ -27,6 +30,7 @@ header {
     background-color: #0C4160;
     color: #C3CEDA;
     box-shadow: 0px 25px 40px 10px white;
+    flex: 0 0 auto;
 }
 
 .dark-mode header {
@@ -125,22 +129,6 @@ header {
     }  
 }
 
-
-#my-intro {
-    animation: fade-in-left 1.5s;
-}
-
-@keyframes fade-in-left {
-    from{
-            opacity: 0; 
-            transform: translateX(-50px);
-    }
-    to{
-            opacity: 1;
-            transform: translateX(0px);
-    }
-}
-
 .sections ul {
     list-style-type: none;
     margin: 0;
@@ -190,8 +178,8 @@ header {
 .toggle-handle {
 
     display: inline-block;
-    height: 26px;
-    width: 52px;
+    height: 20px;
+    width: 40px;
     background-image: url("Images/day sky.jpeg");
     background-size: cover;
     transition: 0.4s;
@@ -203,8 +191,8 @@ header {
    
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
+    height: 20px;
+    width: 20px;
     margin: auto;
     background-image: url("Images/sun.png");
     background-size: cover;
@@ -218,14 +206,47 @@ header {
 
 .theme-toggle input:checked + .toggle-label .toggle-handle:before {
     background-image: url("Images/moon.png");
-    transform: translateX(26px);
+    transform: translateX(20px);
 }
 
 #my-intro {
+    animation: fade-in-left 1.5s;
     padding: 25px 15vw 25px 15vw;
     line-height: 3;
 }
 
+@keyframes fade-in-left {
+    from{
+            opacity: 0; 
+            transform: translateX(-50px);
+    }
+    to{
+            opacity: 1;
+            transform: translateX(0px);
+    }
+}
+
+@keyframes fade-in-up {
+    from{
+            opacity: 0; 
+            transform: translateY(15px);
+    }
+    to{
+            opacity: 1;
+            transform: translateY(0px);
+    }
+}
+
+@keyframes fade-in-smooth {
+    from{
+            opacity: 0; 
+            transform: scale(1.1);
+    }
+    to{
+            opacity: 1;
+            transform: scale(1);
+    }
+}
 
 .pdf-container {
     width: 100%;
@@ -256,6 +277,7 @@ header {
 }
 
 .connect-container {
+    flex: 1 1 auto;
     padding: 25px 5vw 25px 5vw;
     text-align: center;
 }
@@ -271,6 +293,10 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.dark-mode #gh-logo {
+    filter: invert(1);
 }
 
 #contact-form {
@@ -340,4 +366,56 @@ header {
 
 #form-status {
     font-size: .75em;
+}
+
+#projects {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory; 
+}
+  
+.project-container {
+    height: 100vh;
+    padding: 10%;
+    scroll-snap-align: start; 
+    scroll-margin-top: 20px;
+}
+
+.project-name {
+    opacity: 0;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.project-description {
+    opacity: 0;
+    font-size: 1em;
+}
+
+.tech-stack-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .75em;
+    font-size: .85em;
+}
+
+.tech-stack {
+    opacity: 0;
+}
+
+.tech {
+    opacity: 0;
+    background-color: #00000025;
+    border-radius: 5px;
+    padding: .5em;
+    font-size: 0.5em;
+}
+
+.dark-mode .tech {
+    opacity: 0;
+    background-color: #ffffff25;
+    border-radius: 5px;
+    padding: .5em;
+    font-size: 0.5em;
 }

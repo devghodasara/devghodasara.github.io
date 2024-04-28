@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Dev Ghodasara</title>
+</head>
+<body>
+    <header>
+        <a href="https://www.ghodasara.dev" id="website-name">
+            <h1>
+                <span class="animate-dev" style="font-weight: 200">
+                    <span class="alternate-text">&lt;</span><span class="original-text">DEV</span><span class="alternate-text">/&gt;</span>
+                </span>
+                <span style="font-weight: 500">GHODASARA</span>
+            </h1>
+        </a>
+        <button class="toggle-menu" onclick="displayMenu()" aria-label="Menu">&#9776;</button>
+        <nav class="sections">
+            <ul>
+                <li><a href="https://www.ghodasara.dev">About me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="connect.html">Connect</a></li>
+                <li><a href="resume.html">Resume</a><li>
+            </ul>
+        </nav>
+        <div class="theme-toggle">
+            <input type="checkbox" id="themeSwitch" aria-lable="Toggle Theme">
+            <label for="themeSwitch" class="toggle-label">
+                <span class="toggle-handle"></span>
+            </label>
+        </div>
+    </header>
+    <div id="projects">
+        <div class="project-container">
+            <div class="project-name">Mini-C Complier</div>
+            </br>
+            <div class="tech-stack-container">
+                <div class="tech-stack">Tech Stack:</div>
+                <div class="tech">Java</div>
+                <div class="tech">Shell Script</div>
+            </div>
+            </br>
+            <div class="project-description">
+                A sophisticated Mini-C compiler designed to perform thorough syntax and semantic analysis, providing error detection and generating well-formatted, indented code. This compiler is meticulously crafted to adhere to the specifications of the Mini-C language, encompassing a comprehensive set of keywords, symbols, operators, and lexical patterns.
+            </div>
+        </div>
+        <div class="project-container">
+            <div class="project-name">Portfolio Website</div>
+            </br>
+            <div class="tech-stack-container">
+                <div class="tech-stack">Tech Stack:</div>
+                <div class="tech">HTML</div>
+                <div class="tech">CSS</div>
+                <div class="tech">JavaScript</div>
+                <div class="tech">GitHub Pages</div>
+                <div class="tech">Google API</div>
+            </div>
+            </br>
+            <div class="project-description">
+                A personal portfolio website hosted on GitHub Pages. The project features a smooth navigation system, responsive design, and a seamless transition between pages. It showcases my skills and experience, and has a contact form for users. The website is fully responsive supports all screen sizes and is accessible on all devices.
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
