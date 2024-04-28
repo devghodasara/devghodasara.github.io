@@ -91,7 +91,7 @@ header {
 .alternate .original-text {
     color: red;
     text-transform: lowercase;
-    letter-spacing: 0.11695em;
+    letter-spacing: 0.11659em;
 }
 
 .alternate .alternate-text {
