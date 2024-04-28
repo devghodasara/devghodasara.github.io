@@ -3,6 +3,7 @@ const header = document.getElementsByTagName("header")[0];
 var animateDev = document.querySelectorAll('.alternate-text');
 const body = document.body;
 const projectContainers = document.querySelectorAll('.project-container');
+const regex = /^.*\/projects\.html$/;
 
 modeSwitch.addEventListener('change', () => {
     localStorage.setItem('themePreference',modeSwitch.checked ? 'dark' : 'light');
@@ -168,6 +169,8 @@ function handleScroll() {
         }
     });
 }
-  
-  document.addEventListener('DOMContentLoaded', handleScroll);
-  document.getElementById('projects').addEventListener('scroll', handleScroll);
+
+if (regex.test(window.location.pathname)) {
+    document.addEventListener('DOMContentLoaded', handleScroll);
+    document.getElementById('projects').addEventListener('scroll', handleScroll);
+}
